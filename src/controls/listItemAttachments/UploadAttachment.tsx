@@ -36,7 +36,7 @@ export class UploadAttachment extends React.Component<IUploadAttachmentProps, IU
    * @param prevState
    */
   public componentDidUpdate(prevProps: IUploadAttachmentProps, prevState: IUploadAttachmentState): void {
-    if (this.props.fireUpload) {
+    if (prevProps.fireUpload != true && this.props.fireUpload) {
       this.fileInput.current.value = '';
       this.fileInput.current.click();
     }
