@@ -188,12 +188,12 @@ export class ListItemAttachments extends React.Component<IListItemAttachmentsPro
 
         {
           this.state.showPlaceHolder ?
-            <Placeholder
+            (this.props.disabled ? undefined : <Placeholder
               iconName='Upload'
               iconText={strings.ListItemAttachmentslPlaceHolderIconText}
               description={strings.ListItemAttachmentslPlaceHolderDescription}
               buttonLabel={strings.ListItemAttachmentslPlaceHolderButtonLabel}
-              onConfigure={() => this.setState({ fireUpload: true })} />
+              onConfigure={() => this.setState({ fireUpload: true })} />)
             :
 
             this.state.attachments.map(file => {
